@@ -29,9 +29,9 @@
 | /plan-eng-review | gstack | ENG-PLAN.md | 엔지니어링 관점 리뷰 |
 | /gsd-discuss-phase | GSD | CONTEXT.md | 구현 전 결정사항 수집 |
 | /gsd-plan-phase | GSD | REQUIREMENTS.md, PLAN.md, RESEARCH.md, PATTERNS.md | 리서치 + 실행 계획 |
-| /gsd-analyze-dependencies | GSD | (의존성 분석) | 단계 간 의존성 충돌 방지 |
-| /brainstorming | Superpowers | (화면 출력) | 소크라테스식 아이디어 다듬기 |
-| /writing-plans | Superpowers | (화면 출력) | 2-5분 단위 구현 계획 분해 |
+| /gsd-analyze-dependencies | GSD | (ROADMAP.md 갱신) | 단계 간 의존성 충돌 방지 |
+| /brainstorming | Superpowers | BRAINSTORM-SPEC.md | 소크라테스식 아이디어 다듬기 |
+| /writing-plans | Superpowers | IMPLEMENTATION-PLAN.md | 2-5분 단위 구현 계획 분해 |
 
 ## 03_concept (1개)
 
@@ -68,7 +68,7 @@
 | /design-review | gstack | DESIGN-REVIEW.md | 시각적 비일관성 수정 |
 | /plan-design-review | gstack | DESIGN-REVIEW.md | 디자인 0-10점 평가 |
 | /gsd-spec-phase | GSD | UI-SPEC.md, AI-SPEC.md | 페이즈 스펙 명확화 |
-| /gsd-mvp-phase | GSD | (PLAN 슬라이스) | MVP 범위 축소 |
+| /gsd-mvp-phase | GSD | (ROADMAP.md 갱신, PLAN.md) | MVP 범위 축소 |
 | /gsd-spike | GSD | SPIKE.md | 기술 실험 |
 | /gsd-sketch | GSD | SKETCH.md | 디자인 탐색 |
 
@@ -102,7 +102,7 @@
 |------|------|--------|------|
 | /cm-scenario-test | CM | SCENARIO-TEST-RESULTS.md | 시나리오 테스트 + 결과 기록 |
 | /gsd-verify-work | GSD | UAT.md | 사용자 수용 테스트 |
-| /gsd-validate-phase | GSD | (검증 갭 보고) | 미검증 영역 감사 |
+| /gsd-validate-phase | GSD | VALIDATION.md | 미검증 영역 감사 |
 
 ## 11_integration-test (9개)
 
@@ -137,16 +137,16 @@
 | 스킬 | 출처 | 산출물 | 설명 |
 |------|------|--------|------|
 | /cm-progress | CM | (화면 출력) | 현재 상태 + 다음 할 일 |
-| /cm-feedback | CM | (상태 라우팅) | 피드백 처리 (승인/수정/질문) |
-| /cm-modify | CM | (영향 분석) | 이전 단계 수정 + 영향 분석 |
-| /cm-rollback | CM | (상태 복원) | 단계 되돌리기 |
+| /cm-feedback | CM | (DASHBOARD.md 갱신) | 피드백 처리 (승인/수정/질문) |
+| /cm-modify | CM | (산출물 갱신, FEATURE-TRACKING.md) | 이전 단계 수정 + 영향 분석 |
+| /cm-rollback | CM | (DASHBOARD.md 갱신) | 단계 되돌리기 |
 | /cm-guide | CM | (화면 출력) | 전체 사용법 안내 |
 | /gsd-progress | GSD | (화면 출력) | STATE.md 기반 상태 감지 |
 | /gsd-health | GSD | (화면 출력) | .planning/ 무결성 검증 |
 | /gsd-phase | GSD | (ROADMAP 갱신) | 페이즈 CRUD |
-| /gsd-session-report | GSD | SESSION-REPORT.md | 세션 종료 시 요약 리포트 |
+| /gsd-session-report | GSD | common/SESSION-REPORT.md | 세션 종료 시 요약 리포트 |
 | /context-save | gstack | CONTEXT-SNAPSHOT.md | 세션 상태 저장 |
-| /context-restore | gstack | (상태 복원) | 세션 상태 복원 |
+| /context-restore | gstack | (대화형 복원) | 세션 상태 복원 |
 | /learn | gstack | LEARNINGS.md | 교훈/인사이트 누적 관리 |
 | /systematic-debugging | Superpowers | (디버깅 과정) | 4단계 근본 원인 분석 |
 | /careful | gstack | (안전장치) | 파괴적 명령 경고 |

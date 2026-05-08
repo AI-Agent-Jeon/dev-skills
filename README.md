@@ -78,9 +78,9 @@ git clone https://github.com/AI-Agent-Jeon/dev-skills.git ~/.claude/skills/dev-s
 | `/plan-eng-review` | 선택 | 엔지니어링 관점에서 기술적 실현 가능성 리뷰 | ENG-PLAN.md |
 | `/gsd-discuss-phase` | 선택 | 구현 전 결정해야 할 사항들을 수집하고 정리 | CONTEXT.md |
 | `/gsd-plan-phase` | 선택 | 기술 리서치 수행 후 구체적인 실행 계획 수립 | REQUIREMENTS.md, PLAN.md, RESEARCH.md, PATTERNS.md |
-| `/gsd-analyze-dependencies` | 선택 | 단계 간 의존성을 분석하여 충돌 방지 | (의존성 분석 결과) |
-| `/brainstorming` | 선택 | 소크라테스식 질문으로 아이디어를 구체화하고 다듬기 | (화면 출력) |
-| `/writing-plans` | 선택 | 큰 작업을 2-5분 단위의 작은 구현 계획으로 분해 | (화면 출력) |
+| `/gsd-analyze-dependencies` | 선택 | 단계 간 의존성을 분석하여 충돌 방지 | (ROADMAP.md 갱신) |
+| `/brainstorming` | 선택 | 소크라테스식 질문으로 아이디어를 구체화하고 다듬기 | BRAINSTORM-SPEC.md |
+| `/writing-plans` | 선택 | 큰 작업을 2-5분 단위의 작은 구현 계획으로 분해 | IMPLEMENTATION-PLAN.md |
 
 ### 03. 컨셉 결정 (1개)
 
@@ -117,7 +117,7 @@ git clone https://github.com/AI-Agent-Jeon/dev-skills.git ~/.claude/skills/dev-s
 | `/design-review` | 선택 | 구현된 UI의 시각적 비일관성을 찾아 수정 | DESIGN-REVIEW.md |
 | `/plan-design-review` | 선택 | 디자인을 0-10점으로 평가하고 개선점 제시 | DESIGN-REVIEW.md |
 | `/gsd-spec-phase` | 선택 | UI 스펙, AI 스펙 등 페이즈별 상세 스펙 명확화 | UI-SPEC.md, AI-SPEC.md |
-| `/gsd-mvp-phase` | 선택 | 전체 계획에서 MVP 범위만 추출하여 축소 | (PLAN 슬라이스) |
+| `/gsd-mvp-phase` | 선택 | 전체 계획에서 MVP 범위만 추출하여 축소 | (ROADMAP.md 갱신, PLAN.md) |
 | `/gsd-spike` | 선택 | 불확실한 기술 요소에 대한 실험(스파이크) 수행 | SPIKE.md |
 | `/gsd-sketch` | 선택 | 다양한 디자인 방향을 탐색하고 비교 | SKETCH.md |
 
@@ -151,7 +151,7 @@ git clone https://github.com/AI-Agent-Jeon/dev-skills.git ~/.claude/skills/dev-s
 |------|:----:|------|--------|
 | `/cm-scenario-test` | **필수** | SCENARIOS.md 기반으로 시나리오 테스트 실행 + 결과 기록 | SCENARIO-TEST-RESULTS.md |
 | `/gsd-verify-work` | 선택 | 사용자 수용 테스트(UAT) 관점에서 기능 검증 | UAT.md |
-| `/gsd-validate-phase` | 선택 | 미검증 영역을 감사하여 테스트 누락 방지 | (검증 갭 보고) |
+| `/gsd-validate-phase` | 선택 | 미검증 영역을 감사하여 테스트 누락 방지 | VALIDATION.md |
 
 ### 11. 통합 테스트 (9개)
 
@@ -164,8 +164,8 @@ git clone https://github.com/AI-Agent-Jeon/dev-skills.git ~/.claude/skills/dev-s
 | `/review` | 선택 | PR 단위로 코드 리뷰 수행 | (PR 코멘트) |
 | `/gsd-code-review` | 선택 | 코드 리뷰 후 이슈를 심각도별로 분류 | CODE-REVIEW.md |
 | `/gsd-audit-fix` | 선택 | 감사에서 발견된 이슈를 자동으로 수정하는 파이프라인 | (코드 수정) |
-| `/verification-before-completion` | 선택 | 완료 선언 전 검증 증거를 강제로 수집 | (검증 증거) |
-| `/requesting-code-review` | 선택 | 서브에이전트에게 코드 리뷰를 요청하여 독립적 검토 | (리뷰 결과) |
+| `/verification-before-completion` | 선택 | 완료 선언 전 검증 증거를 강제로 수집 | (대화형 검증) |
+| `/requesting-code-review` | 선택 | 서브에이전트에게 코드 리뷰를 요청하여 독립적 검토 | (대화형 리뷰) |
 
 ### 12. 배포 (9개)
 
@@ -186,16 +186,16 @@ git clone https://github.com/AI-Agent-Jeon/dev-skills.git ~/.claude/skills/dev-s
 | 스킬 | 필수 | 용도 | 산출물 |
 |------|:----:|------|--------|
 | `/cm-progress` | **필수** | 현재 프로젝트 상태 확인 + 다음에 할 일 안내 | (화면 출력) |
-| `/cm-feedback` | **필수** | FEEDBACK.md를 읽고 승인(✅)/수정(🔄)/질문(❓)에 따라 다음 액션 라우팅 | (상태 라우팅) |
-| `/cm-modify` | 선택 | 이전 단계 산출물 수정 + 이후 단계 영향 범위 분석 | (영향 분석) |
-| `/cm-rollback` | 선택 | 특정 단계를 되돌리고 이후 단계 산출물 정리 | (상태 복원) |
+| `/cm-feedback` | **필수** | FEEDBACK.md를 읽고 승인(✅)/수정(🔄)/질문(❓)에 따라 다음 액션 라우팅 | (DASHBOARD.md 갱신) |
+| `/cm-modify` | 선택 | 이전 단계 산출물 수정 + 이후 단계 영향 범위 분석 | (산출물 갱신, FEATURE-TRACKING.md) |
+| `/cm-rollback` | 선택 | 특정 단계를 되돌리고 이후 단계 산출물 정리 | (DASHBOARD.md 갱신) |
 | `/cm-guide` | **필수** | 12단계 전체 흐름과 사용 가능한 명령어 안내 | (화면 출력) |
 | `/gsd-progress` | 선택 | STATE.md 기반으로 프로젝트 진행 상태 자동 감지 | (화면 출력) |
 | `/gsd-health` | 선택 | .planning/ 디렉토리의 파일 무결성 검증 | (화면 출력) |
 | `/gsd-phase` | 선택 | 페이즈 추가/수정/삭제/삽입 (ROADMAP CRUD) | (ROADMAP 갱신) |
-| `/gsd-session-report` | 선택 | 세션 종료 시 작업 내용 요약 리포트 생성 | SESSION-REPORT.md |
+| `/gsd-session-report` | 선택 | 세션 종료 시 작업 내용 요약 리포트 생성 | common/SESSION-REPORT.md |
 | `/context-save` | 선택 | 현재 세션 상태(작업 중인 내용, 결정사항 등)를 파일로 저장 | CONTEXT-SNAPSHOT.md |
-| `/context-restore` | 선택 | 저장된 세션 상태를 복원하여 이전 작업 이어서 진행 | (상태 복원) |
+| `/context-restore` | 선택 | 저장된 세션 상태를 복원하여 이전 작업 이어서 진행 | (대화형 복원) |
 | `/learn` | 선택 | 프로젝트에서 얻은 교훈과 인사이트를 누적 기록 | LEARNINGS.md |
 | `/systematic-debugging` | 선택 | 관찰 → 가설 → 실험 → 결론 4단계 근본 원인 분석 | (디버깅 과정) |
 | `/careful` | 선택 | 파괴적 명령(rm, drop 등) 실행 전 경고 표시 | (안전장치) |

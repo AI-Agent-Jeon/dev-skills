@@ -1,5 +1,5 @@
 <purpose>
-Generate a post-session summary document capturing work performed, outcomes achieved, and estimated resource usage. Writes SESSION_REPORT.md to .planning/reports/ for human review and stakeholder sharing.
+Generate a post-session summary document capturing work performed, outcomes achieved, and estimated resource usage. Writes SESSION_REPORT.md to common/ for human review and stakeholder sharing.
 </purpose>
 
 <required_reading>
@@ -34,7 +34,7 @@ Read `.planning/ROADMAP.md` to get milestone name and goals.
 
 Check for existing reports:
 ```bash
-ls -la .planning/reports/SESSION_REPORT*.md 2>/dev/null || echo "No previous reports"
+ls -la common/SESSION_REPORT*.md 2>/dev/null || echo "No previous reports"
 ```
 </step>
 
@@ -55,10 +55,10 @@ Estimation heuristics:
 Create the report directory and file:
 
 ```bash
-mkdir -p .planning/reports
+mkdir -p common
 ```
 
-Write `.planning/reports/SESSION_REPORT.md` (or `.planning/reports/YYYYMMDD-session-report.md` if previous reports exist):
+Write `common/SESSION-REPORT.md` (or `common/SESSION-REPORT-YYYYMMDD.md` if previous reports exist):
 
 ```markdown
 # GSD Session Report
@@ -120,7 +120,7 @@ Show the user:
 ```
 ## Session Report Generated
 
-📄 `.planning/reports/[filename].md`
+📄 `common/[filename].md`
 
 ### Highlights
 - **Commits:** [N]
@@ -139,7 +139,7 @@ If this is the first report, mention:
 
 <success_criteria>
 - [ ] Session data gathered from STATE.md, git log, and plan files
-- [ ] Report written to .planning/reports/
+- [ ] Report written to common/
 - [ ] Report includes work summary, outcomes, and file changes
 - [ ] Filename includes date to prevent overwrites
 - [ ] Result summary displayed to user
