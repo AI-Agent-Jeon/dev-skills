@@ -1,3 +1,8 @@
+---
+name: gsd-analyze-dependencies
+description: 단계 간 의존성 충돌 방지
+---
+
 <purpose>
 Analyze ROADMAP.md phases for dependency relationships before execution. Detect file overlap between phases, semantic API/data-flow dependencies, and suggest `Depends on` entries to prevent merge conflicts during parallel execution by `/gsd-manager`.
 </purpose>

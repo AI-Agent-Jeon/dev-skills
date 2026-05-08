@@ -1,3 +1,8 @@
+---
+name: gsd-map-codebase
+description: 기존 코드 아키텍처/스택 분석
+---
+
 <purpose>
 Orchestrate parallel codebase mapper agents to analyze codebase and produce structured documents in .planning/codebase/
 

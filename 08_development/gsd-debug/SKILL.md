@@ -1,3 +1,8 @@
+---
+name: gsd-debug
+description: 체계적 디버깅 기록
+---
+
 # Debug Workflow
 
 Invoked by `/gsd-debug` (`commands/gsd/debug.md`).

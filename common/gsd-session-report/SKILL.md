@@ -1,3 +1,8 @@
+---
+name: gsd-session-report
+description: 세션 종료 시 요약 리포트
+---
+
 <purpose>
 Generate a post-session summary document capturing work performed, outcomes achieved, and estimated resource usage. Writes SESSION_REPORT.md to common/ for human review and stakeholder sharing.
 </purpose>

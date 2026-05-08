@@ -1,3 +1,8 @@
+---
+name: gsd-health
+description: .planning/ 무결성 검증
+---
+
 <purpose>
 Validate `.planning/` directory integrity and report actionable issues. Checks for missing files, invalid configurations, inconsistent state, and orphaned plans. Optionally repairs auto-fixable issues.
 </purpose>

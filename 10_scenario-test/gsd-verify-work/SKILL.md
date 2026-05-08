@@ -1,3 +1,8 @@
+---
+name: gsd-verify-work
+description: 사용자 수용 테스트(UAT) — 대화형으로 기능 검증
+---
+
 <purpose>
 Validate built features through conversational testing with persistent state. Creates UAT.md that tracks test progress, survives /clear, and feeds gaps into /gsd-plan-phase --gaps.
 

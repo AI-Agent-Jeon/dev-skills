@@ -1,3 +1,8 @@
+---
+name: gsd-undo
+description: 안전한 git 되돌리기
+---
+
 <purpose>
 Safe git revert workflow. Rolls back GSD phase or plan commits using the phase manifest with dependency checks and a confirmation gate. Uses git revert --no-commit (NEVER git reset) to preserve history.
 </purpose>

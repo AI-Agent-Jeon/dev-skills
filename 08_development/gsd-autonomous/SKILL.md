@@ -1,3 +1,8 @@
+---
+name: gsd-autonomous
+description: 자율 연속 실행
+---
+
 <purpose>
 
 Drive milestone phases autonomously — all remaining phases, a range via `--from N`/`--to N`, or a single phase via `--only N`. For each incomplete phase: discuss → plan → execute using Skill() flat invocations. Pauses only for explicit user decisions (grey area acceptance, blockers, validation requests). Re-reads ROADMAP.md after each phase to catch dynamically inserted phases.

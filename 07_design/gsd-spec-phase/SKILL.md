@@ -1,3 +1,8 @@
+---
+name: gsd-spec-phase
+description: 페이즈별 상세 스펙 명확화
+---
+
 <purpose>
 Clarify WHAT a phase delivers through a Socratic interview loop with quantitative ambiguity scoring.
 Produces a SPEC.md with falsifiable requirements that discuss-phase treats as locked decisions.

@@ -1,3 +1,8 @@
+---
+name: gsd-spike
+description: 기술 실험(스파이크) — 실험적 구현으로 실현 가능성 검증
+---
+
 <purpose>
 Spike an idea through experiential exploration — build focused experiments to feel the pieces
 of a future app, validate feasibility, and produce verified knowledge for the real build.

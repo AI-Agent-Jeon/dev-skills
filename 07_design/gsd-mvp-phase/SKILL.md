@@ -1,3 +1,8 @@
+---
+name: gsd-mvp-phase
+description: MVP 범위 축소
+---
+
 <purpose>
 Guide the user through MVP-mode planning for a phase. Prompts for an "As a / I want to / So that" user story, runs SPIDR splitting check on the story, writes the result to ROADMAP.md, and delegates to `/gsd plan-phase` (which auto-detects MVP via the roadmap mode field shipped in PRD Phase 1).
 </purpose>

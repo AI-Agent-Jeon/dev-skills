@@ -1,3 +1,8 @@
+---
+name: gsd-validate-phase
+description: 미검증 영역 감사
+---
+
 <purpose>
 Audit Nyquist validation gaps for a completed phase. Generate missing tests. Update VALIDATION.md.
 </purpose>

@@ -1,3 +1,8 @@
+---
+name: gsd-phase
+description: 페이즈 추가/수정/삭제/삽입
+---
+
 <purpose>
 Add a new integer phase to the end of the current milestone in the roadmap. Automatically calculates next phase number, creates phase directory, and updates roadmap structure.
 </purpose>

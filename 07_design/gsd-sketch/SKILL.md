@@ -1,3 +1,8 @@
+---
+name: gsd-sketch
+description: 디자인 방향 탐색 — HTML 목업으로 2-3가지 변형 비교
+---
+
 <purpose>
 Explore design directions through throwaway HTML mockups before committing to implementation.
 Each sketch produces 2-3 variants for comparison. Saves artifacts to `.planning/sketches/`.

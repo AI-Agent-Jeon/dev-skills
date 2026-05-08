@@ -1,3 +1,8 @@
+---
+name: gsd-execute-phase
+description: wave 기반 병렬 실행
+---
+
 <purpose>
 Execute all plans in a phase using wave-based parallel execution. Orchestrator stays lean — delegates plan execution to subagents.
 </purpose>

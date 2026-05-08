@@ -1,3 +1,8 @@
+---
+name: gsd-new-project
+description: 프로젝트 비전/요구사항/로드맵 정의
+---
+
 <purpose>
 Initialize a new project through unified flow: questioning, research (optional), requirements, roadmap. This is the most leveraged moment in any project — deep questioning here means better plans, better execution, better outcomes. One workflow takes you from idea to ready-for-planning.
 </purpose>

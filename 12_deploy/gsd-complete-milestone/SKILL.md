@@ -1,3 +1,8 @@
+---
+name: gsd-complete-milestone
+description: 마일스톤 완료 + 릴리스 태그
+---
+
 <purpose>
 
 Mark a shipped version (v1.0, v1.1, v2.0) as complete. Creates historical record in MILESTONES.md, performs full PROJECT.md evolution review, reorganizes ROADMAP.md with milestone groupings, and tags the release in git.

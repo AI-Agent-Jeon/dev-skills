@@ -1,3 +1,8 @@
+---
+name: gsd-code-review
+description: 코드 리뷰 + 이슈 분류
+---
+
 <purpose>
 Review source files changed during a phase for bugs, security issues, and code quality problems. Computes file scope (--files override > SUMMARY.md > git diff fallback), checks config gate, spawns gsd-code-reviewer agent, commits REVIEW.md, and presents results to user.
 </purpose>

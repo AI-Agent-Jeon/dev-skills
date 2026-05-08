@@ -1,3 +1,8 @@
+---
+name: gsd-audit-fix
+description: 감사 이슈 자동 수정
+---
+
 <purpose>
 Autonomous audit-to-fix pipeline. Runs an audit, parses findings, classifies each as
 auto-fixable vs manual-only, spawns executor agents for fixable issues, runs tests

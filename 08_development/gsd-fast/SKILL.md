@@ -1,3 +1,8 @@
+---
+name: gsd-fast
+description: 사소한 작업 즉시 실행
+---
+
 <purpose>
 Execute a trivial task inline without subagent overhead. No PLAN.md, no Task spawning,
 no research, no plan checking. Just: understand → do → commit → log.
