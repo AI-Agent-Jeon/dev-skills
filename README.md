@@ -10,6 +10,8 @@
 - **순서 강제**: CLAUDE.md 규칙으로 단계 건너뛰기 방지
 - **승인 흐름**: 주요 단계마다 FEEDBACK.md 작성 후 다음 진행
 - **4개 소스 통합**: gstack + GSD + Superpowers + ClaudeManager
+- **혼합형 에이전트**: 무거운 단계는 전담 에이전트 위임, 가벼운 단계는 오케스트레이터 직접 수행
+- **모델 최적화**: 단계별로 다른 AI 모델 배정 가능 (비용 절감)
 
 ## 구성
 
@@ -68,10 +70,26 @@ git clone https://github.com/AI-Agent-Jeon/dev-skills.git ~/.claude/skills/dev-s
 | /careful | 안전 모드 (파괴적 명령 경고) |
 | /guard | careful + freeze 통합 |
 
+## 에이전트 구성
+
+혼합형 아키텍처: 무거운 단계는 전담 에이전트, 가벼운 단계는 오케스트레이터.
+
+| 에이전트 | 모델 | 담당 단계 | 비용 |
+|---------|------|----------|------|
+| planner | opus | 02 기획 | 높음 |
+| designer | opus | 07 설계 | 높음 |
+| developer | sonnet | 08 개발 | 낮음 |
+| tester | sonnet | 09~11 테스트 | 낮음 |
+| deployer | sonnet | 12 배포 | 낮음 |
+| (오케스트레이터) | — | 03~06 | — |
+
+모델 변경: `agents/*.md`의 `model` 필드 수정 (opus / sonnet / haiku)
+
 ## 패키지 구조
 
 ```
 dev-skills/
+├── agents/           에이전트 정의 (5개)
 ├── 01_init/          초기화 스킬 (4개)
 ├── 02_planning/      기획 스킬 (9개)
 ├── 03_concept/       컨셉 스킬 (1개)
@@ -104,3 +122,4 @@ dev-skills/
 4. **추적 갱신**: 스킬 실행 시 FEATURE-TRACKING.md 자동 체크
 5. **상태 동기화**: DASHBOARD.md ↔ STATE.md 양방향 동기화
 6. **실행 순서**: 같은 단계 내 생성 스킬 → 검토 스킬 순서 준수
+7. **에이전트 위임**: 무거운 단계(기획·설계·개발·테스트·배포)는 전담 에이전트에 위임
