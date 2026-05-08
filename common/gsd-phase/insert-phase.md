@@ -34,7 +34,7 @@ Validate first argument is an integer.
 Load phase operation context:
 
 ```bash
-INIT=$(gsd-sdk query init.phase-op "${after_phase}")
+INIT=$(~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query init.phase-op "${after_phase}")
 if [[ "$INIT" == @file:* ]]; then INIT=$(cat "${INIT#@file:}"); fi
 ```
 
@@ -46,10 +46,10 @@ Exit.
 </step>
 
 <step name="insert_phase">
-**Delegate the phase insertion to `gsd-sdk query phase.insert`:**
+**Delegate the phase insertion to `~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query phase.insert`:**
 
 ```bash
-RESULT=$(gsd-sdk query phase.insert "${after_phase}" "${description}")
+RESULT=$(~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query phase.insert "${after_phase}" "${description}")
 ```
 
 The CLI handles:
@@ -71,7 +71,7 @@ blocks direct STATE.md writes):
    `{decimal_phase}`:
 
    ```bash
-   gsd-sdk query state.patch '{"Current Phase":"{decimal_phase}","Next recommended run":"/gsd-plan-phase {decimal_phase}"}'
+   ~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query state.patch '{"Current Phase":"{decimal_phase}","Next recommended run":"/gsd-plan-phase {decimal_phase}"}'
    ```
 
    (Adjust field names to whatever pointers STATE.md exposes — the handler
@@ -82,7 +82,7 @@ blocks direct STATE.md writes):
    and dedupes identical entries:
 
    ```bash
-   gsd-sdk query state.add-roadmap-evolution \
+   ~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query state.add-roadmap-evolution \
      --phase {decimal_phase} \
      --action inserted \
      --after {after_phase} \
@@ -142,10 +142,10 @@ Project state updated: .planning/STATE.md
 <success_criteria>
 Phase insertion is complete when:
 
-- [ ] `gsd-sdk query phase.insert` executed successfully
+- [ ] `~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query phase.insert` executed successfully
 - [ ] Phase directory created
 - [ ] Roadmap updated with new phase entry (includes "(INSERTED)" marker)
-- [ ] `gsd-sdk query state.add-roadmap-evolution ...` returned `{ added: true }` or `{ added: false, reason: "duplicate" }`
-- [ ] `gsd-sdk query state.patch` returned matched next-phase pointer field(s)
+- [ ] `~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query state.add-roadmap-evolution ...` returned `{ added: true }` or `{ added: false, reason: "duplicate" }`
+- [ ] `~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query state.patch` returned matched next-phase pointer field(s)
 - [ ] User informed of next steps and dependency implications
 </success_criteria>

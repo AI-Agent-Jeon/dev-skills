@@ -77,7 +77,7 @@ description: 배포 실행 + DEPLOY-REPORT.md 기록
 👉 FEATURE-TRACKING.md에서 모든 기능의 전 단계가 ✅인지 최종 확인해주세요.
 
 💡 추가 스킬:
-   /canary — 배포 후 모니터링
-   /document-release — 릴리스 노트 생성
-   /retro — 엔지니어링 회고
+   /deploy-canary — 배포 후 모니터링
+   /deploy-document — 릴리스 노트 생성
+   /deploy-retro — 엔지니어링 회고
 ```

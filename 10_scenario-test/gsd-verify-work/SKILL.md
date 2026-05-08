@@ -35,10 +35,10 @@ No Pass/Fail buttons. No severity questions. Just: "Here's what should happen. D
 If $ARGUMENTS contains a phase number, load context:
 
 ```bash
-INIT=$(gsd-sdk query init.verify-work "${PHASE_ARG}")
+INIT=$(~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query init.verify-work "${PHASE_ARG}")
 if [[ "$INIT" == @file:* ]]; then INIT=$(cat "${INIT#@file:}"); fi
-AGENT_SKILLS_PLANNER=$(gsd-sdk query agent-skills gsd-planner)
-AGENT_SKILLS_CHECKER=$(gsd-sdk query agent-skills gsd-plan-checker)
+AGENT_SKILLS_PLANNER=$(~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query agent-skills gsd-planner)
+AGENT_SKILLS_CHECKER=$(~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query agent-skills gsd-plan-checker)
 ```
 
 Parse JSON for: `planner_model`, `checker_model`, `commit_docs`, `phase_found`, `phase_dir`, `phase_number`, `phase_name`, `has_verification`, `uat_path`.
@@ -47,7 +47,7 @@ Parse JSON for: `planner_model`, `checker_model`, `commit_docs`, `phase_found`, 
 # MVP mode detection via the centralized phase.mvp-mode resolver.
 # verify-work has no --mvp CLI flag (mode is inherited from the planned phase),
 # so we omit --cli-flag — the verb falls through roadmap → config → false.
-MVP_MODE=$(gsd-sdk query phase.mvp-mode "${phase_number}" --pick active)
+MVP_MODE=$(~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query phase.mvp-mode "${phase_number}" --pick active)
 ```
 </step>
 
@@ -105,7 +105,7 @@ Before running manual UAT, check whether this phase has a UI component and wheth
 `mcp__playwright__*` or `mcp__puppeteer__*` tools are available in the current session.
 
 ```
-UI_PHASE_FLAG=$(gsd-sdk query config-get workflow.ui_phase --raw 2>/dev/null || echo "true")
+UI_PHASE_FLAG=$(~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query config-get workflow.ui_phase --raw 2>/dev/null || echo "true")
 UI_SPEC_FILE=$(ls "${PHASE_DIR}"/*-UI-SPEC.md 2>/dev/null | head -1)
 ```
 
@@ -159,8 +159,8 @@ When `MVP_MODE=false` (mode is null, absent, or the phase has no `**Mode:**` lin
 **User-story format guard.** When `MVP_MODE=true`, also verify the phase's goal is in User Story format via the centralized validator:
 
 ```bash
-PHASE_GOAL=$(gsd-sdk query roadmap.get-phase "${phase_number}" --pick goal)
-USER_STORY_VALID=$(gsd-sdk query user-story.validate --story "$PHASE_GOAL" --pick valid)
+PHASE_GOAL=$(~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query roadmap.get-phase "${phase_number}" --pick goal)
+USER_STORY_VALID=$(~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query user-story.validate --story "$PHASE_GOAL" --pick valid)
 if [ "$USER_STORY_VALID" != "true" ]; then
   echo "Phase ${phase_number} has '**Mode:** mvp' in ROADMAP.md but the **Goal:** is not in user-story format."
   echo "Run /gsd mvp-phase ${phase_number} to set a user-story goal before verifying."
@@ -268,7 +268,7 @@ Proceed to `present_test`.
 Render the checkpoint from the structured UAT file instead of composing it freehand:
 
 ```bash
-CHECKPOINT=$(gsd-sdk query uat.render-checkpoint --file "$uat_path" --raw)
+CHECKPOINT=$(~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query uat.render-checkpoint --file "$uat_path" --raw)
 if [[ "$CHECKPOINT" == @file:* ]]; then CHECKPOINT=$(cat "${CHECKPOINT#@file:}"); fi
 ```
 
@@ -426,7 +426,7 @@ Clear Current Test section:
 
 Commit the UAT file:
 ```bash
-gsd-sdk query commit "test({phase_num}): complete UAT - {passed} passed, {issues} issues" --files ".planning/phases/XX-name/{phase_num}-UAT.md"
+~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query commit "test({phase_num}): complete UAT - {passed} passed, {issues} issues" --files ".planning/phases/XX-name/{phase_num}-UAT.md"
 ```
 
 Present summary:
@@ -450,7 +450,7 @@ Present summary:
 **If issues == 0:**
 
 ```bash
-SECURITY_CFG=$(gsd-sdk query config-get workflow.security_enforcement --raw 2>/dev/null || echo "true")
+SECURITY_CFG=$(~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query config-get workflow.security_enforcement --raw 2>/dev/null || echo "true")
 SECURITY_FILE=$(ls "${PHASE_DIR}"/*-SECURITY.md 2>/dev/null | head -1)
 ```
 
@@ -496,10 +496,10 @@ All tests passed. Phase {phase} marked complete.
 <step name="scan_phase_artifacts">
 Run phase artifact scan to surface any open items before marking phase verified:
 
-`audit-open` is CJS-only until registered on `gsd-sdk query`:
+`audit-open` is CJS-only until registered on `~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query`:
 
 ```bash
-gsd-sdk query audit-open --json
+~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query audit-open --json
 ```
 
 Parse the JSON output. For the CURRENT PHASE ONLY, surface:

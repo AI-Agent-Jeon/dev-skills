@@ -3,8 +3,8 @@ name: util-guard
 version: 0.1.0
 description: |
   Full safety mode: destructive command warnings + directory-scoped edits.
-  Combines /careful (warns before rm -rf, DROP TABLE, force-push, etc.) with
-  /freeze (blocks edits outside a specified directory). Use for maximum safety
+  Combines /util-careful (warns before rm -rf, DROP TABLE, force-push, etc.) with
+  /util-freeze (blocks edits outside a specified directory). Use for maximum safety
   when touching prod or debugging live systems. Use when asked to "guard mode",
   "full safety", "lock it down", or "maximum safety". (gstack)
 triggers:
@@ -36,13 +36,13 @@ hooks:
 <!-- AUTO-GENERATED from SKILL.md.tmpl — do not edit directly -->
 <!-- Regenerate: bun run gen:skill-docs -->
 
-# /guard — Full Safety Mode
+# /util-guard — Full Safety Mode
 
 Activates both destructive command warnings and directory-scoped edit restrictions.
-This is the combination of `/careful` + `/freeze` in a single command.
+This is the combination of `/util-careful` + `/util-freeze` in a single command.
 
-**Dependency note:** This skill references hook scripts from the sibling `/careful`
-and `/freeze` skill directories. Both must be installed (they are installed together
+**Dependency note:** This skill references hook scripts from the sibling `/util-careful`
+and `/util-freeze` skill directories. Both must be installed (they are installed together
 by the gstack setup script).
 
 ```bash
@@ -68,7 +68,7 @@ echo "$FREEZE_DIR"
 2. Ensure trailing slash and save to the freeze state file:
 ```bash
 FREEZE_DIR="${FREEZE_DIR%/}/"
-eval "$(~/.claude/skills/gstack/bin/gstack-paths)"
+eval "$(~/.claude/skills/dev-skills/bin/gstack/gstack-paths)"
 STATE_DIR="$GSTACK_STATE_ROOT"
 mkdir -p "$STATE_DIR"
 echo "$FREEZE_DIR" > "$STATE_DIR/freeze-dir.txt"
@@ -79,9 +79,9 @@ Tell the user:
 - "**Guard mode active.** Two protections are now running:"
 - "1. **Destructive command warnings** — rm -rf, DROP TABLE, force-push, etc. will warn before executing (you can override)"
 - "2. **Edit boundary** — file edits restricted to `<path>/`. Edits outside this directory are blocked."
-- "To remove the edit boundary, run `/unfreeze`. To deactivate everything, end the session."
+- "To remove the edit boundary, run `/util-unfreeze`. To deactivate everything, end the session."
 
 ## What's protected
 
-See `/careful` for the full list of destructive command patterns and safe exceptions.
-See `/freeze` for how edit boundary enforcement works.
+See `/util-careful` for the full list of destructive command patterns and safe exceptions.
+See `/util-freeze` for how edit boundary enforcement works.

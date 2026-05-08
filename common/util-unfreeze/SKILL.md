@@ -2,7 +2,7 @@
 name: util-unfreeze
 version: 0.1.0
 description: |
-  Clear the freeze boundary set by /freeze, allowing edits to all directories
+  Clear the freeze boundary set by /util-freeze, allowing edits to all directories
   again. Use when you want to widen edit scope without ending the session.
   Use when asked to "unfreeze", "unlock edits", "remove freeze", or
   "allow all edits". (gstack)
@@ -17,9 +17,9 @@ allowed-tools:
 <!-- AUTO-GENERATED from SKILL.md.tmpl — do not edit directly -->
 <!-- Regenerate: bun run gen:skill-docs -->
 
-# /unfreeze — Clear Freeze Boundary
+# /util-unfreeze — Clear Freeze Boundary
 
-Remove the edit restriction set by `/freeze`, allowing edits to all directories.
+Remove the edit restriction set by `/util-freeze`, allowing edits to all directories.
 
 ```bash
 mkdir -p ~/.gstack/analytics
@@ -29,7 +29,7 @@ echo '{"skill":"unfreeze","ts":"'$(date -u +%Y-%m-%dT%H:%M:%SZ)'","repo":"'$(bas
 ## Clear the boundary
 
 ```bash
-eval "$(~/.claude/skills/gstack/bin/gstack-paths)"
+eval "$(~/.claude/skills/dev-skills/bin/gstack/gstack-paths)"
 STATE_DIR="$GSTACK_STATE_ROOT"
 if [ -f "$STATE_DIR/freeze-dir.txt" ]; then
   PREV=$(cat "$STATE_DIR/freeze-dir.txt")
@@ -40,6 +40,6 @@ else
 fi
 ```
 
-Tell the user the result. Note that `/freeze` hooks are still registered for the
+Tell the user the result. Note that `/util-freeze` hooks are still registered for the
 session — they will just allow everything since no state file exists. To re-freeze,
-run `/freeze` again.
+run `/util-freeze` again.

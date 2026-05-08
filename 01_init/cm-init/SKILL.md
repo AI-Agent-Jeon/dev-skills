@@ -153,5 +153,5 @@ GSD 스킬이 STATE.md를 갱신하면 DASHBOARD.md도 같이 갱신.
   💡 .claude/agents/*.md에서 model 필드를 수정하여 변경 가능
 
 👉 다음 단계: /cm-planning 을 실행하여 기획을 시작하세요.
-   또는 /office-hours 로 아이디어를 먼저 검증할 수 있습니다.
+   또는 /init-office-hours 로 아이디어를 먼저 검증할 수 있습니다.
 ```

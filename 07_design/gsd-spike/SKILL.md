@@ -101,7 +101,7 @@ ls -d .planning/spikes/[0-9][0-9][0-9]-* 2>/dev/null | sort | tail -1
 
 Check `commit_docs` config:
 ```bash
-COMMIT_DOCS=$(gsd-sdk query config-get commit_docs 2>/dev/null || echo "true")
+COMMIT_DOCS=$(~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query config-get commit_docs 2>/dev/null || echo "true")
 ```
 </step>
 
@@ -339,7 +339,7 @@ tags: [tag1, tag2]
 
 **i.** Commit (if `COMMIT_DOCS` is true):
 ```bash
-gsd-sdk query commit "docs(spike-NNN): [VERDICT] — [key finding]" --files .planning/spikes/NNN-descriptive-name/ .planning/spikes/MANIFEST.md
+~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query commit "docs(spike-NNN): [VERDICT] — [key finding]" --files .planning/spikes/NNN-descriptive-name/ .planning/spikes/MANIFEST.md
 ```
 
 **j.** Report:
@@ -393,7 +393,7 @@ Only include patterns that repeated across 2+ spikes or were explicitly chosen b
 
 Commit (if `COMMIT_DOCS` is true):
 ```bash
-gsd-sdk query commit "docs(spikes): update conventions" --files .planning/spikes/CONVENTIONS.md
+~/.claude/skills/dev-skills/bin/gsd/gsd-sdk.js query commit "docs(spikes): update conventions" --files .planning/spikes/CONVENTIONS.md
 ```
 </step>
 

@@ -71,5 +71,5 @@ FEATURE-LIST.md의 기능을 우선순위(P0→P1→P2) 순으로 구현:
 💡 추가 개발 스킬:
    /gsd-execute-phase — wave 기반 병렬 실행
    /gsd-debug — 체계적 디버깅
-   /investigate — 가설 기반 디버깅
+   /dev-investigate — 가설 기반 디버깅
 ```

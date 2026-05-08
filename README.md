@@ -29,6 +29,18 @@
 git clone https://github.com/AI-Agent-Jeon/dev-skills.git ~/.claude/skills/dev-skills
 ```
 
+### 포함된 런타임 도구
+
+`bin/` 디렉토리에 gstack·GSD 런타임 스크립트가 포함되어 있습니다:
+
+| 경로 | 파일 수 | 크기 | 설명 |
+|------|---------|------|------|
+| `bin/gstack/` | 60 | ~516KB | gstack 셸 스크립트 (config, review, telemetry 등) |
+| `bin/gsd/` | 2 | ~408KB | GSD SDK (gsd-sdk.js, install.js) |
+
+> **참고:** `gstack-global-discover`는 65MB 컴파일 바이너리로 `.ts` 소스만 포함됩니다.
+> 필요 시 Node.js로 실행하거나, gstack 원본 패키지에서 복사하세요.
+
 ## 빠른 시작
 
 ```

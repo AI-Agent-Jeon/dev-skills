@@ -62,8 +62,8 @@ description: 통합 테스트 실행 + INTEGRATION-TEST-RESULTS.md 기록
    작성 완료 후 /cm-feedback 을 실행하세요.
 
 💡 추가 검증 스킬:
-   /qa — 브라우저 QA + 자동 수정
-   /cso — OWASP + STRIDE 보안 감사
-   /benchmark — Core Web Vitals 성능 측정
-   /review — PR 코드 리뷰
+   /test-qa — 브라우저 QA + 자동 수정
+   /test-cso — OWASP + STRIDE 보안 감사
+   /test-benchmark — Core Web Vitals 성능 측정
+   /test-review — PR 코드 리뷰
 ```
