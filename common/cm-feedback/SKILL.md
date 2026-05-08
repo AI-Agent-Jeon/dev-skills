@@ -78,8 +78,12 @@ C 옵션: {설명}
 | 완료 단계 | 다음 스킬 | 설명 |
 |----------|----------|------|
 | 02_planning | /cm-concept | 컨셉 결정 안내 |
+| 03_concept | /cm-tech | 기술 결정 안내 |
+| 04_tech | /cm-scenario | 시나리오 작성 |
 | 05_scenario | /cm-storyboard | 스토리보드 작성 |
 | 06_storyboard | /cm-design | 설계 시작 |
 | 07_design | /cm-develop | 개발 시작 |
 | 08_development | /cm-unit-test | 단위 테스트 |
+| 09_unit-test | /cm-scenario-test | 시나리오 테스트 |
+| 10_scenario-test | /cm-integration-test | 통합 테스트 |
 | 11_integration-test | (12_deploy 스킬) | 배포 시작 |
