@@ -4,7 +4,7 @@ description: 세션 종료 시 요약 리포트
 ---
 
 <purpose>
-Generate a post-session summary document capturing work performed, outcomes achieved, and estimated resource usage. Writes SESSION_REPORT.md to common/ for human review and stakeholder sharing.
+Generate a post-session summary document capturing work performed, outcomes achieved, and estimated resource usage. Writes SESSION-REPORT.md to common/ for human review and stakeholder sharing.
 </purpose>
 
 <required_reading>
@@ -39,7 +39,7 @@ Read `.planning/ROADMAP.md` to get milestone name and goals.
 
 Check for existing reports:
 ```bash
-ls -la common/SESSION_REPORT*.md 2>/dev/null || echo "No previous reports"
+ls -la common/SESSION-REPORT*.md 2>/dev/null || echo "No previous reports"
 ```
 </step>
 

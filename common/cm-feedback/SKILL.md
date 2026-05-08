@@ -77,6 +77,7 @@ C 옵션: {설명}
 
 | 완료 단계 | 다음 스킬 | 설명 |
 |----------|----------|------|
+| 01_init | /cm-planning | 기획 시작 |
 | 02_planning | /cm-concept | 컨셉 결정 안내 |
 | 03_concept | /cm-tech | 기술 결정 안내 |
 | 04_tech | /cm-scenario | 시나리오 작성 |
