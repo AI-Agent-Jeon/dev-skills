@@ -118,10 +118,11 @@
 | /verification-before-completion | Superpowers | (검증 증거) | 완료 전 검증 강제 |
 | /requesting-code-review | Superpowers | (리뷰 결과) | 서브에이전트 코드 리뷰 |
 
-## 12_deploy (9개)
+## 12_deploy (10개)
 
 | 스킬 | 출처 | 산출물 | 설명 |
 |------|------|--------|------|
+| /cm-deploy | CM | DEPLOY-REPORT.md | 배포 실행 + 결과 기록 |
 | /ship | gstack | PR | 테스트→PR 자동 생성 |
 | /land-and-deploy | gstack | (배포) | PR 머지→배포→헬스 체크 |
 | /canary | gstack | CANARY-REPORT.md | 배포 후 모니터링 |

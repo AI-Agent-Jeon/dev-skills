@@ -17,11 +17,11 @@
 
 | 출처 | 스킬 수 | 역할 |
 |------|---------|------|
-| CM (ClaudeManager) | 16 | 프로세스 관리 — 단계 진행, 승인, 수정, 대시보드 |
+| CM (ClaudeManager) | 17 | 프로세스 관리 — 단계 진행, 승인, 수정, 대시보드 |
 | gstack | 27 | 실행 도구 — 아이디어 검증, 디자인 리뷰, QA, 보안, 배포 |
 | GSD | 27 | 프로젝트 관리 — 상태 추적, 계획, 실행, 검증 |
 | Superpowers | 11 | 방법론 — TDD, 병렬 에이전트, 디버깅, 검증 강제 |
-| **합계** | **81** | |
+| **합계** | **82** | |
 
 ## 설치
 
@@ -53,11 +53,11 @@ git clone https://github.com/AI-Agent-Jeon/dev-skills.git ~/.claude/skills/dev-s
 | 09 단위테스트 | /cm-unit-test | /test-driven-development, /gsd-add-tests | UNIT-TEST-RESULTS |
 | 10 시나리오테스트 | /cm-scenario-test | /gsd-verify-work | SCENARIO-TEST-RESULTS, UAT |
 | 11 통합테스트 | /cm-integration-test | /qa, /cso, /benchmark, /review | INTEGRATION-TEST-RESULTS, QA-REPORT |
-| 12 배포 | — | /ship, /land-and-deploy, /canary, /retro | CANARY-REPORT, RETRO |
+| 12 배포 | /cm-deploy | /ship, /land-and-deploy, /canary, /retro | DEPLOY-REPORT, CANARY-REPORT, RETRO |
 
 ---
 
-## 전체 스킬 목록 (81개)
+## 전체 스킬 목록 (82개)
 
 ### 01. 초기화 (4개)
 
@@ -167,10 +167,11 @@ git clone https://github.com/AI-Agent-Jeon/dev-skills.git ~/.claude/skills/dev-s
 | `/verification-before-completion` | 선택 | 완료 선언 전 검증 증거를 강제로 수집 | (대화형 검증) |
 | `/requesting-code-review` | 선택 | 서브에이전트에게 코드 리뷰를 요청하여 독립적 검토 | (대화형 리뷰) |
 
-### 12. 배포 (9개)
+### 12. 배포 (10개)
 
 | 스킬 | 필수 | 용도 | 산출물 |
 |------|:----:|------|--------|
+| `/cm-deploy` | **필수** | 배포 준비 확인 + 빌드·배포 실행 + 헬스 체크 + 결과 기록 | DEPLOY-REPORT.md |
 | `/ship` | 선택 | 테스트 통과 확인 후 PR 자동 생성 | PR |
 | `/land-and-deploy` | 선택 | PR 머지 → 배포 실행 → 헬스 체크까지 일괄 수행 | (배포) |
 | `/canary` | 선택 | 배포 후 일정 기간 모니터링하여 이상 징후 탐지 | CANARY-REPORT.md |
@@ -238,7 +239,7 @@ dev-skills/
 ├── 09_unit-test/     단위테스트 스킬 (3개)
 ├── 10_scenario-test/ 시나리오테스트 스킬 (3개)
 ├── 11_integration-test/ 통합테스트 스킬 (9개)
-├── 12_deploy/        배포 스킬 (9개)
+├── 12_deploy/        배포 스킬 (10개)
 ├── common/           공통 스킬 (19개)
 ├── README.md
 └── SKILL-INDEX.md

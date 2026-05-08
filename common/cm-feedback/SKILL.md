@@ -86,4 +86,4 @@ C 옵션: {설명}
 | 08_development | /cm-unit-test | 단위 테스트 |
 | 09_unit-test | /cm-scenario-test | 시나리오 테스트 |
 | 10_scenario-test | /cm-integration-test | 통합 테스트 |
-| 11_integration-test | (12_deploy 스킬) | 배포 시작 |
+| 11_integration-test | /cm-deploy | 배포 시작 |
