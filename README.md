@@ -27,6 +27,16 @@
 
 ```bash
 git clone https://github.com/AI-Agent-Jeon/dev-skills.git ~/.claude/skills/dev-skills
+bash ~/.claude/skills/dev-skills/install.sh
+```
+
+`install.sh`가 각 스킬을 `~/.claude/skills/` 최상위에 심볼릭 링크로 등록합니다.
+Claude Code 재시작 후 `/cm-init` 등 슬래시 명령어를 사용할 수 있습니다.
+
+### 제거
+
+```bash
+bash ~/.claude/skills/dev-skills/uninstall.sh
 ```
 
 ### 포함된 런타임 도구
